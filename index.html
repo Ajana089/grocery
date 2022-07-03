@@ -1,0 +1,69 @@
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<style>
+    th{ 
+        color:white;
+            }
+</style>
+
+
+<table class="table table-striped">
+    <tr  class="bg-info">
+        <th>SrNo</th>
+        <th>Item</th>
+        <th>Unit</th>
+        <th> Quantity</th>
+        <th> Note</th>
+        <th> Department</th>
+       
+    </tr>
+
+    <tbody id="myTable">
+        
+    </tbody>
+</table>
+
+<script>
+	var myArray = [
+	    {'SerialNumber':'1', 'Item':'Rice', 'unit':'Kg','Quantity':'5kk', 'Note':'Brown rice','Department':' rice'},
+	    {'SerialNumber':'2', 'Item':'Oil', 'unit':'Liter','Quantity':'2l', 'Note':'castor oil','Department':' oil'},
+        {'SerialNumber':'3', 'Item':'Sugar', 'unit':'Kg','Quantity':'1kg', 'Note':'Brown sugar','Department':' sugar'},
+        {'SerialNumber':'4', 'Item':'Salt', 'unit':'Kg','Quantity':'2kg', 'Note':'iodised salt','Department':' salt'},
+        {'SerialNumber':'5', 'Item':'wheat', 'unit':'Kg','Quantity':'5k', 'Note':'Broken','Department':' wheat'},
+	    {'SerialNumber':'6', 'Item':'soap', 'unit':'count','Quantity':'2l', 'Note':'washing soap','Department':' washing'},
+        {'SerialNumber':'7', 'Item':'whiterice', 'unit':'Kg','Quantity':'1kg', 'Note':'Brown rice','Department':' rice'},
+        {'SerialNumber':'8', 'Item':'urddal', 'unit':'Kg','Quantity':'2kg', 'Note':'Brown rice','Department':' rice'},
+        {'SerialNumber':'9', 'Item':'greenpeas', 'unit':'Kg','Quantity':'1kg', 'Note':'Brown rice','Department':' greenpeas'},
+        {'SerialNumber':'10', 'Item':'tea', 'unit':'Kg','Quantity':'2kg', 'Note':'tea','Department':' teapowder'},
+	]
+   
+
+
+	buildTable(myArray)
+
+
+
+	function buildTable(data){
+		var table = document.getElementById('myTable')
+
+		for (var i = 0; i < data.length; i++){
+			var row = `<tr>
+							<td>${data[i].SerialNumber}</td>
+							<td>${data[i].Item}</td>
+							<td>${data[i].unit}</td>
+                            <td>${data[i].Quantity}</td>
+							<td>${data[i].Note}</td>
+							<td>${data[i].Department}</td>
+					  </tr>`
+			table.innerHTML += row
+
+
+		}
+	}
+
+</script>
